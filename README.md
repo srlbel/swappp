@@ -4,7 +4,7 @@ Currently, it supports:
 - Catppuccin Mocha
 
 Todo:
-- CLI
+- ~CLI~
 - Add more color schemes
 - Support for other file formats
 - Multithread support

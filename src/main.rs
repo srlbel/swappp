@@ -1,5 +1,16 @@
 use image::{GenericImageView, ImageBuffer, Rgba};
+use clap::Parser;
 use std::{path::Path, u32};
+
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    #[arg(short, long)]
+    input: String,
+
+    #[arg(short, long)]
+    output: String,
+}
 
 pub const CATPPUCCIN_MOCHA: &[Rgba<u8>] = &[
     Rgba([0xF5, 0xE0, 0xDC, 255]),
@@ -72,12 +83,16 @@ fn change_color_scheme(
     Ok(())
 }
 
-fn main() {
-    let input_file = Path::new("input.jpg");
-    let output_file = Path::new("output.png");
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let args = Args::parse();
+
+    let input_file = Path::new(&args.input);
+    let output_file = Path::new(&args.output);
 
     match change_color_scheme(input_file, output_file) {
         Ok(_) => println!("Ok"),
         Err(e) => eprintln!("Error: {e}"),
     }
+
+    Ok(())
 }

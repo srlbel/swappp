@@ -11,7 +11,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = cli::Args::parse();
 
     let selected_palette: &[Rgb<u8>] = match args.palette {
-        Some(PaletteOption::CatppucinMocha) => colors::CATPPUCCIN_MOCHA,
+        Some(PaletteOption::CatppuccinMocha) => colors::CATPPUCCIN_MOCHA,
+        Some(PaletteOption::CatppuccinFrappe) => colors::CATPPUCCIN_FRAPPE,
         None => colors::CATPPUCCIN_MOCHA
     };
 

@@ -16,5 +16,6 @@ pub struct Args {
 
 #[derive(Debug, Clone, ValueEnum)]
 pub enum PaletteOption {
-    CatppucinMocha,
+    CatppuccinMocha,
+    CatppuccinFrappe
 }

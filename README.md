@@ -2,6 +2,7 @@ A simple color palette swapper.
 
 Currently, it supports:
 - Catppuccin Mocha
+- Catppuccin Frappe
 
 Todo:
 - ~~CLI~~
